@@ -1,0 +1,9 @@
+.cache-main
+.cache-tests
+.project
+.classpath
+.settings
+.idea
+*~
+target/
+bin/
