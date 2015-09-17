@@ -29,7 +29,7 @@ case class Recursive(l : List[SimpleTrait]) extends SimpleTrait
  
  and vice versa
  
- ## Motivation
+## Motivation
  
 The [spray-json-shapeless](https://github.com/fommil/spray-json-shapeless) uses shapeless to achieve the goal of (de-)serializing case classes and trait hierachies, which is a library I am not yet firm with. Hence this project just provides isomorphisms and natural transformations between the relevant datatypes.
 
@@ -40,10 +40,8 @@ See the test suite and especially read the documentation and caveats documented 
 ## Thanks
 
 Many thanks to [Sam](https://github.com/fommil) for sharing this awesome software.
- 
-
- 
- ## License
+  
+## License
 
 `play-spray2json` is [Free Software][free] under the Apache License v2.
 
