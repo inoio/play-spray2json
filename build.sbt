@@ -4,6 +4,8 @@ organization := "io.ino"
 
 licenses := Seq("Apache-2.0" -> url("http://www.apache.org/licenses/LICENSE-2.0.html"))
 
+homepage := Some(url("https://github.com/inoio/play-spray2json"))
+
 scalaVersion := "2.11.7"
 
 libraryDependencies ++= Seq(
