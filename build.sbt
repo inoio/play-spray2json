@@ -8,6 +8,8 @@ homepage := Some(url("https://github.com/inoio/play-spray2json"))
 
 scalaVersion := "2.11.7"
 
+typelevelDefaultSettings
+
 libraryDependencies ++= Seq(
   "com.typesafe.play" %% "play-json"    % "2.3.10",
   "io.spray"          %%  "spray-json"  % "1.3.2",
