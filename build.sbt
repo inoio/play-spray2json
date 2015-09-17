@@ -12,7 +12,8 @@ libraryDependencies ++= Seq(
   "com.typesafe.play" %% "play-json"    % "2.3.10",
   "io.spray"          %%  "spray-json"  % "1.3.2",
   "org.specs2"        %% "specs2-core"  % "3.6.4"   % "test",
-  "com.github.fommil" %% "spray-json-shapeless" % "1.1.0" % "test"
+  "com.github.fommil" %% "spray-json-shapeless" % "1.1.0" % "test",
+  "org.slf4j" 		  %  "slf4j-nop"    % "1.7.12" % "test"
 )
 
 // Maven publishing info
