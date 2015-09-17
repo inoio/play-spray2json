@@ -4,8 +4,6 @@ organization := "inoio"
 
 scalaVersion := "2.11.7"
 
-version := "0.1.0-SNAPSHOT"
-
 libraryDependencies ++= Seq(
   "com.typesafe.play" %% "play-json"    % "2.3.10",
   "io.spray"          %%  "spray-json"  % "1.3.2",
