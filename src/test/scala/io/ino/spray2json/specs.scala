@@ -1,4 +1,4 @@
-package inoio
+package io.ino
 package spray2json
 
 import org.specs2.mutable._
@@ -7,7 +7,7 @@ import shapeless._
 import spray.json._
 
 import fommil.sjs._
-
+import allconversions._
 import play.api.libs.json.Json
 import allconversions._
 

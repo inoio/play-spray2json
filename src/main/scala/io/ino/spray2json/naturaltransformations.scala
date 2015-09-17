@@ -1,4 +1,4 @@
-package inoio
+package io.ino
 package spray2json
 
 import spray.json._
@@ -83,6 +83,6 @@ trait LowLevelImplicits {
 }
 
 /**
- * import inoio.spray2json.allconversions._ to get going.
+ * import io.nio.spray2json.allconversions._ to get going.
  */
 object allconversions extends LowLevelImplicits
