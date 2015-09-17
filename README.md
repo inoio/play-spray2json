@@ -45,7 +45,7 @@ Many thanks to [Sam](https://github.com/fommil) for sharing this awesome softwar
 
 `play-spray2json` is [Free Software][free] under the Apache License v2.
 
- 
+ [![Build Status](https://travis-ci.org/inoio/play-spray2json.svg)](https://travis-ci.org/inoio/play-spray2json)
  
  
 
