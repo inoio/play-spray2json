@@ -8,7 +8,7 @@ import spray.json._
 
 import fommil.sjs._
 import allconversions._
-import play.api.libs.json.Json
+import play.api.libs.json.{Json, Format}
 import allconversions._
 
 class JsonSpec extends Specification {
@@ -17,32 +17,25 @@ class JsonSpec extends Specification {
 
   val st : SimpleTrait = Foo("hello")
   val r : SimpleTrait = Recursive(st :: Baz :: Bar() :: Nil)
-  
-  "The Json serializer" should {
-    "be able to serialize the class Foo" in {
-      val result = Json.toJson(st)
-      result.toString must beEqualTo("""{"type":"Foo","s":"hello"}""")
-    }
-    
-     "be able to serialize the class Recursive" in {
-      val result = Json.toJson(r)
-      result.toString must beEqualTo("""{"type":"Recursive","l":[{"type":"Foo","s":"hello"},{"type":"Baz"},{"type":"Bar"}]}""")
-    }
-    
-  }
-  
-  "The Json deserializer" should {
-    "be able to deserialize the class Foo" in {
-      val result = Json.parse("""{"type":"Foo","s":"hello"}""").as[SimpleTrait]
-      result must beEqualTo(st)
-    }
-    
-    "be able to deserialize the class Recursive" in {
-      val result = Json.parse("""{"type":"Recursive","l":[{"type":"Foo","s":"hello"},{"type":"Baz"},{"type":"Bar"}]}""").as[SimpleTrait]
-      result must beEqualTo(r)
-    }
+
+  def roundTrip[A : Format](value: A, string : String) = {
+    val result = Json.toJson(value)
+    result.toString must beEqualTo(string)
+    Json.parse(string).as[A] must beEqualTo(value)
   }
 
+  
+  "The play-json (de-)serializer" should {
+    "be able to (de-)serialize the class Foo" in {
+      roundTrip(st, """{"type":"Foo","s":"hello"}""")
+    }
+    
+    "be able to (de-)serialize the class Recursive" in {
+      roundTrip(r, """{"type":"Recursive","l":[{"type":"Foo","s":"hello"},{"type":"Baz"},{"type":"Bar"}]}""")
+    }
+    
+  }
+  
 }
 
 package traits {
